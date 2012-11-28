@@ -19,7 +19,7 @@
 using namespace std;
 using namespace cg2;
 
-void loadModel(std::string modelPath)
+const aiScene* loadModel(std::string modelPath)
 {
 	modelPath = "../data/bunny.ply";
 	std::string filepath = modelPath;
@@ -37,6 +37,8 @@ void loadModel(std::string modelPath)
 	aiProcess_FindDegenerates | aiProcess_SortByPType |
 	aiProcess_Triangulate | aiProcess_RemoveComponent |
 	aiProcess_ValidateDataStructure );
+
+	return scene;
 }
 
 int main( int argc, char** argv )
